@@ -1,52 +1,15 @@
 import { useRef, useState } from "react";
 import {
   ScrollView,
-  TouchableOpacity,
   View,
   NativeScrollEvent,
   NativeSyntheticEvent,
 } from "react-native";
-import type { FC } from "react";
-import type { SvgProps } from "react-native-svg";
 import { styles, width } from "./styles";
-import StyledText from "./components/StyledText";
-import CartSVG from "../../assets/images/cart.svg"
-import PackageSVG from "../../assets/images/package.svg"
-import RegisterSVG from "../../assets/images/register.svg"
-import TruckSVG from "../../assets/images/truck.svg"
+import { onboardingSteps } from "../../common/constants";
+import { OnboardStep } from "../../common/types";
+import { StyledText, StyledButton } from "../../common/components";
 
-type OnboardStep = {
-  image: FC<SvgProps>;
-  title: string;
-  content: string;
-};
-
-const onboardingSteps: OnboardStep[] = [
-  {
-    image: CartSVG,
-    title: "Welcome to Grocerya",
-    content:
-      "Get your grocery needs at your service within a minute. Fast, efficient, and convenient.",
-  },
-  {
-    image: TruckSVG,
-    title: "Get any packages delivered",
-    content:
-      "Get all your items conveniently, ensuring everything you need arrives without hassle.",
-  },
-  {
-    image: PackageSVG,
-    title: "Protected package delivery",
-    content:
-      "Your groceries are carefully packaged to arrive safely and in perfect condition.",
-  },
-  {
-    image: RegisterSVG,
-    title: "Best price guaranteed",
-    content:
-      "Stock up on your favorite items while staying within your budget.",
-  },
-];
 
 export function OnboardingScreen() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -67,10 +30,14 @@ export function OnboardingScreen() {
   };
 
   const handleSkip = () => {
-      scrollRef.current?.scrollTo({
-        x: width * onboardingSteps.length,
-        animated: true,
-      });
+    scrollRef.current?.scrollTo({
+      x: width * onboardingSteps.length,
+      animated: true,
+    });
+  };
+
+  const handleGetStarted = () => {
+
   };
 
   return (
@@ -95,21 +62,19 @@ export function OnboardingScreen() {
 
       {(activeIndex === onboardingSteps.length - 1) ?
         <View style={styles.btnRow}>
-          <TouchableOpacity style={[styles.btn, styles.next]} onPress={handleSkip}>
-            <StyledText style={{ color: "#fff" }}>Get Started</StyledText>
-          </TouchableOpacity>
+          <StyledButton onPress={handleGetStarted}>
+            Get Started
+          </StyledButton>
         </View>
         :
         <View style={styles.btnRow}>
-          <TouchableOpacity style={[styles.btn, styles.skip]} onPress={handleSkip}>
-            <StyledText>Skip</StyledText>
-          </TouchableOpacity>
+          <StyledButton onPress={handleSkip} variant="secondary">
+            Skip
+          </StyledButton>
 
-          <TouchableOpacity style={[styles.btn, styles.next]} onPress={handleNext}>
-            <StyledText style={{ color: "#fff" }}>
-              Next
-            </StyledText>
-          </TouchableOpacity>
+          <StyledButton onPress={handleNext}>
+            Next
+          </StyledButton>
         </View>
       }
     </View>

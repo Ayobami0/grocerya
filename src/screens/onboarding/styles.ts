@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+import { colors, typography } from '../../common/theme';
 
 export const { width } = Dimensions.get('window');
 
@@ -6,7 +7,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
   },
   slide: {
     width,
@@ -16,16 +17,16 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   slideTitle: {
-    fontSize: 20,
     marginTop: 28,
-    color: '#0D0D0D',
-    fontFamily: 'Poppins-SemiBold',
+    color: colors.black,
+    ...typography.semiBold,
+    ...typography.lg,
   },
   slideContent: {
-    fontSize: 16,
     textAlign: 'center',
     marginTop: 8,
-    color: '#777777',
+    color: colors.grey,
+    ...typography.base,
   },
   indicatorRow: {
     flexDirection: 'row',
@@ -37,11 +38,11 @@ export const styles = StyleSheet.create({
     borderRadius: 100,
     height: 3,
     flex: 1,
-    backgroundColor: '#F2F2F3',
+    backgroundColor: colors.greyAccent,
     marginHorizontal: 2,
   },
   activeDot: {
-    backgroundColor: '#0D0D0D',
+    backgroundColor: colors.black,
     width: 16,
   },
   btnRow: {
@@ -50,27 +51,7 @@ export const styles = StyleSheet.create({
     marginBottom: 40,
     paddingHorizontal: 30,
   },
-  btn: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 100,
-    paddingVertical: 14,
-  },
-  skip: {
-    backgroundColor: '#F2F2F3',
-    fontFamily: 'Poppins-Medium',
-    fontSize: 16,
-  },
-  next: {
-    backgroundColor: '#0D0D0D',
-    fontFamily: 'Poppins-Medium',
-    fontSize: 16,
-  },
   scrollView: {
     flex: 1,
-  },
-  text: {
-    fontFamily: 'Poppins-Regular',
   },
 });
