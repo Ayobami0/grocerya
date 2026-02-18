@@ -1,5 +1,24 @@
 import { CartSVG, PackageSVG, RegisterSVG, TruckSVG } from './svgs';
-import { OnboardStep } from './types';
+import { Country, OnboardStep } from './types';
+import countriesData from "world-countries";
+
+
+export const COUNTRIES: Country[] = countriesData
+    .filter((c) => c.idd?.root && c.idd?.suffixes?.length)
+    .map((c) => ({
+      name: c.name.common,
+      isoCode: c.cca2,
+      dialCode: `${c.idd.root}${c.idd.suffixes[0]}`,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+export const getFlagEmoji = (countryCode: string): string => {
+  return countryCode
+    .toUpperCase()
+    .replace(/./g, (char) =>
+      String.fromCodePoint(127397 + char.charCodeAt(0))
+    );
+};
 
 export const onboardingSteps: OnboardStep[] = [
   {
@@ -27,3 +46,21 @@ export const onboardingSteps: OnboardStep[] = [
       'Stock up on your favorite items while staying within your budget.',
   },
 ];
+
+export const filters: string[] = [
+  "Gluten-Free",
+  "Vegan Friendly",
+  "Raw Meat",
+  "Organic",
+  "Dairy-Free",
+  "Sugar-Free",
+  "Cruelty-Free",
+  "Processed Food",
+  "Low Carb",
+  "Halal",
+  "Kosher",
+  "Non-GMO",
+  "High Protein",
+];
+
+export const INITIAL_VISIBLE_COUNT = 8;

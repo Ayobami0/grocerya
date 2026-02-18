@@ -5,15 +5,17 @@ import {
   NativeScrollEvent,
   NativeSyntheticEvent,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { styles, width } from "./styles";
 import { onboardingSteps } from "../../common/constants";
 import { OnboardStep } from "../../common/types";
 import { StyledText, StyledButton } from "../../common/components";
-
+import { ScreenList } from "../../common/navigation";
 
 export function OnboardingScreen() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<ScrollView>(null);
+  const navigator = useNavigation();
 
   const onScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     const index = Math.round(e.nativeEvent.contentOffset.x / width);
@@ -37,7 +39,7 @@ export function OnboardingScreen() {
   };
 
   const handleGetStarted = () => {
-
+    navigator.navigate(ScreenList.login);
   };
 
   return (

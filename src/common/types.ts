@@ -9,3 +9,8 @@ export type OnboardStep = {
 
 export type ButtonVariant = 'primary' | 'secondary';
 
+export interface Country {
+  name: string;
+  isoCode: string;
+  dialCode: string;
+}
