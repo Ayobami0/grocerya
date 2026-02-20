@@ -1,13 +1,13 @@
 import { View } from "react-native";
-import { colors, globalStyles } from "../../common/theme";
-import { AppBar, CountryDropdown, QuestionMarkIcon, StyledButton, StyledText, StyledTextInput } from "../../common/components";
+import { colors, globalStyles } from "@themes";
+import { AppBar, CountryDropdown, QuestionMarkIcon, StyledButton, StyledText, StyledTextInput } from "@components";
 import { OtpInput } from "react-native-otp-entry";
 import { styles } from "./styles";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { ScreenList } from "../../common/navigation";
-import { COUNTRIES } from "../../common/constants";
-import { Country } from "../../common/types";
+import { ScreenList } from "@navigation";
+import { COUNTRIES } from "@constants";
+import { Country } from "@types";
 
 
 export function LoginScreen() {

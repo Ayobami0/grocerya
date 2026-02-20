@@ -1,9 +1,9 @@
-import { COUNTRIES, getFlagEmoji } from "../constants";
+import { COUNTRIES, getFlagEmoji } from "@constants";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
-import { colors, radius, typography } from "../theme";
+import { colors, radius, typography } from "@themes";
 import StyledText from "./StyledText";
 import { useState } from "react";
-import { Country } from "../types";
+import { Country } from "@types";
 
 export default function CountryDropdown({ initial, onSelect }: { initial: Country, onSelect: (country: Country) => void }) {
   const [overlayVisible, setOverlayVisible] = useState(false);

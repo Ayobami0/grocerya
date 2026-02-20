@@ -1,8 +1,8 @@
 import { ReactNode } from "react"
 import { StyleSheet, TouchableOpacity, View } from "react-native"
-import { globalStyles } from "../theme";
+import { globalStyles } from "@themes";
 import StyledText from "./StyledText";
-import { BackIconSVG } from "../svgs";
+import { BackIconSVG } from "@svg";
 
 type AppBarProps = {
   title?: string;

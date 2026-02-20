@@ -10,11 +10,11 @@ import { StatusBar, useColorScheme } from 'react-native';
 import {
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
-import { OnboardingScreen } from './screens/onboarding';
-import { LoginScreen, LoginOTPScreen } from './screens/login';
-import { RootStackParamList, ScreenList } from './common/navigation';
+import { OnboardingScreen } from '@screens/onboarding';
+import { LoginScreen, LoginOTPScreen } from '@screens/login';
+import { SetupGroceryCategoriesScreen, SetupLocationScreen, SetupNotificationScreen } from '@screens/setup';
+import { RootStackParamList, ScreenList } from '@navigation';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SetupGroceryCategoriesScreen, SetupLocationScreen, SetupNotificationScreen } from './screens/setup';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

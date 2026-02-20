@@ -1,5 +1,5 @@
 import { CartSVG, PackageSVG, RegisterSVG, TruckSVG } from './svgs';
-import { Country, OnboardStep } from './types';
+import { Country, OnboardStep } from '@types';
 import countriesData from "world-countries";
 
 

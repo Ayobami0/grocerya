@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors, spacing, typography } from '../../common/theme';
+import { colors, spacing, typography } from '@themes';
 
 export const styles = StyleSheet.create({
   continueBtn: {

@@ -1,5 +1,5 @@
 import { TextInput, TextInputProps, View } from "react-native";
-import { globalStyles } from "../theme";
+import { globalStyles } from "@themes";
 
 export default function StyledTextInput({ style, children, ...props }: TextInputProps) {
   return (

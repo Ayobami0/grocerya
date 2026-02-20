@@ -1,10 +1,9 @@
 import {
   TouchableOpacity,
-  Text,
   StyleSheet,
   GestureResponderEvent,
 } from "react-native";
-import { colors, typography } from "../theme";
+import { colors, typography } from "@theme";
 import StyledText from "./StyledText";
 
 interface ChipProps {

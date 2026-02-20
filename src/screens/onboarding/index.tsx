@@ -7,10 +7,10 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { styles, width } from "./styles";
-import { onboardingSteps } from "../../common/constants";
-import { OnboardStep } from "../../common/types";
-import { StyledText, StyledButton } from "../../common/components";
-import { ScreenList } from "../../common/navigation";
+import { onboardingSteps } from "@constants";
+import { OnboardStep } from "@types";
+import { StyledText, StyledButton } from "@components";
+import { ScreenList } from "@navigation";
 
 export function OnboardingScreen() {
   const [activeIndex, setActiveIndex] = useState(0);

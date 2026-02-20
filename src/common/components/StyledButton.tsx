@@ -1,6 +1,6 @@
 import { StyleProp, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
-import { globalStyles, typography } from "../theme";
-import { ButtonVariant } from "../types";
+import { globalStyles, typography } from "@themes";
+import { ButtonVariant } from "@types";
 import StyledText from "./StyledText";
 
 

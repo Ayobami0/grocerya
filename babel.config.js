@@ -1,3 +1,20 @@
 module.exports = {
   presets: ['module:@react-native/babel-preset'],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./src'], // base path for all imports
+        alias: {
+          '@components': './src/common/components/index.ts',
+          '@themes': './src/common/theme/index.ts',
+          '@types': './src/common/types.ts',
+          '@constants': './src/common/constants.ts',
+          '@svg': './src/common/svgs.ts',
+          '@navigation': './src/common/navigation/index.ts',
+          '@screens': './src/screens',
+        },
+      },
+    ],
+  ],
 };

@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
-import { QuestionMarkSVG } from "../svgs";
-import { colors, radius } from "../theme";
+import { QuestionMarkSVG } from "@svg";
+import { colors, radius } from "@themes";
 
 export default function QuestionMark() {
   return <View style={styles.questionCircle}><QuestionMarkSVG /></View>

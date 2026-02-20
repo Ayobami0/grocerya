@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { styles } from "./styles";
-import { globalStyles } from "../../common/theme";
-import { AppBar, Chip, QuestionMarkIcon, StyledButton, StyledText } from "../../common/components";
-import { LocationSVG, NotificaionSVG } from "../../common/svgs";
-import { ScreenList } from "../../common/navigation";
-import React, { useMemo, useState } from "react";
-import { filters, INITIAL_VISIBLE_COUNT } from "../../common/constants";
+import { globalStyles } from "@themes";
+import { AppBar, Chip, QuestionMarkIcon, StyledButton, StyledText } from "@components";
+import { LocationSVG, NotificaionSVG } from "@svg";
+import { ScreenList } from "@navigation";
+import React, { useState } from "react";
+import { filters, INITIAL_VISIBLE_COUNT } from "@constants";
 
 export function SetupGroceryCategoriesScreen() {
   const navigator = useNavigation();
