@@ -61,8 +61,10 @@ export function SetupLocationScreen() {
 }
 
 export function SetupNotificationScreen() {
+  const navigator = useNavigation();
+
   const onContinue = () => {
-    // navigator.navigate(ScreenList.setupLocation);
+    navigator.navigate(ScreenList.main);
   }
 
   return (
