@@ -39,7 +39,7 @@ export function MainTabs() {
 
 export function Navigator() {
   return (
-    <Stack.Navigator initialRouteName={ScreenList.main} screenOptions={{ headerShown: false, }}>
+    <Stack.Navigator initialRouteName={ScreenList.onboarding} screenOptions={{ headerShown: false, }}>
       <Stack.Screen name={ScreenList.onboarding} component={OnboardingScreen} />
       <Stack.Screen name={ScreenList.login} component={LoginScreen} />
       <Stack.Screen name={ScreenList.loginOtp} component={LoginOTPScreen} />

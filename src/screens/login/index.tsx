@@ -37,10 +37,13 @@ export function LoginScreen() {
         <StyledText style={[styles.title]}>Get Started</StyledText>
         <StyledText style={[styles.subtitle]}>You can log in or make an account if you’re new</StyledText>
         <StyledText style={styles.phoneNumberText}>Enter your phone number</StyledText>
-        <View style={{display: 'flex', flexDirection: 'row', gap: 8}}>
-          <CountryDropdown  initial={initialCountry} onSelect={onSelectCountry} />
-          <StyledTextInput placeholder="Phone Number" placeholderTextColor={colors.grey} onChangeText={onChanged} value={number} keyboardType="phone-pad">
-          </StyledTextInput>
+        <View style={{ display: 'flex', flexDirection: 'row', gap: 8 }}>
+          <CountryDropdown initial={initialCountry} onSelect={onSelectCountry} />
+          <View style={{ flex: 1 }}>
+
+            <StyledTextInput placeholder="Phone Number" placeholderTextColor={colors.grey} onChangeText={onChanged} value={number} keyboardType="phone-pad">
+            </StyledTextInput>
+          </View>
         </View>
       </View>
       <StyledButton variant={number !== '' ? 'primary' : 'secondary'} onPress={number !== '' ? onContinue : undefined} style={styles.continueBtn}>
