@@ -1,11 +1,14 @@
 import { colors } from "@themes";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ImageSourcePropType, StyleSheet, Text, View } from "react-native";
 
 export default function ProfileAvatar({ src, initals = 'NA', radius = 20 }: {
-  radius?: number, src?: string, initals?: string
+  radius?: number, src?: ImageSourcePropType, initals?: string
 }) {
   return <View style={[styles.avatarContainer, { width: radius, height: radius }]}>
-    {src ? <Image src={src} /> : <Text>{initals}</Text>}
+    {src ? <Image
+      source={src}
+      style={styles.avatarImage}
+    /> : <Text>{initals}</Text>}
   </View>
 }
 
@@ -16,5 +19,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.greyAccent2
+  },
+  avatarImage: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 1000
   }
 });
