@@ -1,7 +1,18 @@
 import { CartSVG, PackageSVG, RegisterSVG, TruckSVG } from './svgs';
 import { Country, OnboardStep } from '@types';
 import countriesData from "world-countries";
+import { BagSVG, HomeSVG, SaveSVG, UserSVG } from "@svg";
+import { ScreenList } from "@navigation";
+import { FC } from "react";
+import { SvgProps } from "react-native-svg";
 
+
+export const iconMaps: Record<string, FC<SvgProps>> = {
+  [ScreenList.home]: HomeSVG,
+  [ScreenList.profile]: UserSVG,
+  [ScreenList.cart]: BagSVG,
+  [ScreenList.favorite]: SaveSVG,
+} as const;
 
 export const COUNTRIES: Country[] = countriesData
     .filter((c) => c.idd?.root && c.idd?.suffixes?.length)
