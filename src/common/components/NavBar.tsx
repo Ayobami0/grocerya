@@ -1,18 +1,7 @@
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import StyledText from "./StyledText";
-import { colors, radius, spacing, typography } from "@themes";
-import { BagSVG, HomeSVG, SaveSVG, UserSVG } from "@svg";
-import { ScreenList } from "@navigation";
-import { FC } from "react";
-import { SvgProps } from "react-native-svg";
-
-const iconMaps: Record<string, FC<SvgProps>> = {
-  [ScreenList.home]: HomeSVG,
-  [ScreenList.profile]: UserSVG,
-  [ScreenList.cart]: BagSVG,
-  [ScreenList.favorite]: SaveSVG,
-} as const;
-
+import { colors, spacing, typography } from "@themes";
+import { iconMaps } from "@constants";
 
 export function NavBar({ state, descriptors, navigation }) {
 

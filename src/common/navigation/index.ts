@@ -11,6 +11,7 @@ export const ScreenList = {
   setupGrocerySelection: 'SetupGrocerySelection',
   setupLocation: 'SetupLocation',
   setupNotification: 'SetupNotification',
+  mainTab: 'MainTab',
   main: 'Main',
   home: 'Home',
   favorite: 'Favorite',
@@ -26,6 +27,7 @@ export type RootStackParamList = {
   SetupLocation: undefined;
   SetupNotification: undefined;
   Main: undefined;
+  MainDrawer: undefined;
   Home: undefined;
   Cart: undefined;
   Favorite: undefined;

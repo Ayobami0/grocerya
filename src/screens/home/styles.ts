@@ -1,4 +1,4 @@
-import { globalStyles } from '@themes';
+import {globalStyles, radius} from '@themes';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -13,4 +13,10 @@ export const styles = StyleSheet.create({
     ...globalStyles.screen,
     display: 'flex',
   },
+  profileAvatar: {
+    borderRadius: 2000,
+    width: 40,
+    height: 40,
+    backgroundColor: '#000',
+  }
 });

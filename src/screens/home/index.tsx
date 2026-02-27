@@ -1,26 +1,34 @@
 import { ReactNode } from "react";
-import { View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
-import { StyledText } from "@components";
+import { ProfileAvatar, StyledText } from "@components";
+import { useNavigation } from "@react-navigation/native";
 
 export function HomeScreen() {
-  return <AppShell>
-    <View>
-      <StyledText>
-        HOME
-      </StyledText>
+  const navigation = useNavigation<any>();
+
+  return <View style={[styles.screen]}>
+    <View style={{ paddingVertical: 10 }}>
+      <TouchableOpacity onPress={() => navigation.openDrawer()}>
+        <ProfileAvatar initals="AO" radius={40} />
+      </TouchableOpacity>
     </View>
-  </AppShell>
+    <View style={[styles.screen]}>
+      <View>
+        <StyledText style={{fontSize: 80}}>
+          HOME
+        </StyledText>
+      </View>
+    </View>
+  </View>
 }
 
 export function CartScreen() {
-  return <AppShell>
-    <View>
-      <StyledText>
-        CART
-      </StyledText>
-    </View>
-  </AppShell>
+  return <View>
+    <StyledText>
+      CART
+    </StyledText>
+  </View>
 }
 
 export function FavoriteScreen() {

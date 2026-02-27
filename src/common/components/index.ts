@@ -5,4 +5,6 @@ export { default as QuestionMarkIcon } from './QuestionMarkIcon';
 export { default as AppBar } from './AppBar';
 export { default as Chip } from './Chip';
 export { default as CountryDropdown } from './CountryDropDown';
-export { NavBar, type NavBarChild, type NavBarProps } from './NavBar';
+export { NavBar } from './NavBar';
+export {AppDrawer, AppDrawerItemIcon} from './AppDrawer';
+export {default as ProfileAvatar } from './Avatar';
