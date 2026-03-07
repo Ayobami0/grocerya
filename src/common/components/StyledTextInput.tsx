@@ -3,7 +3,7 @@ import { globalStyles } from "@themes";
 
 export default function StyledTextInput({ style, children, ...props }: TextInputProps) {
   return (
-    <View style={[globalStyles.input, , {width: 260}]}>
+    <View style={[globalStyles.input]}>
       <TextInput style={[globalStyles.input, style]} {...props}>
         {children}
       </TextInput>

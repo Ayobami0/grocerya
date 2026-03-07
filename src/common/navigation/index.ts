@@ -11,6 +11,12 @@ export const ScreenList = {
   setupGrocerySelection: 'SetupGrocerySelection',
   setupLocation: 'SetupLocation',
   setupNotification: 'SetupNotification',
+  mainTab: 'MainTab',
+  main: 'Main',
+  home: 'Home',
+  favorite: 'Favorite',
+  profile: 'Profile',
+  cart: 'Cart',
 } as const;
 
 export type RootStackParamList = {
@@ -20,4 +26,10 @@ export type RootStackParamList = {
   SetupGrocerySelection: undefined;
   SetupLocation: undefined;
   SetupNotification: undefined;
+  Main: undefined;
+  MainDrawer: undefined;
+  Home: undefined;
+  Cart: undefined;
+  Favorite: undefined;
+  Profile: undefined;
 };

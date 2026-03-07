@@ -3,7 +3,7 @@ import {
   StyleSheet,
   GestureResponderEvent,
 } from "react-native";
-import { colors, typography } from "@theme";
+import { colors, typography } from "@themes";
 import StyledText from "./StyledText";
 
 interface ChipProps {
