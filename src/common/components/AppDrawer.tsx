@@ -16,7 +16,7 @@ export function AppDrawer(props: DrawerContentComponentProps) {
     <DrawerContentScrollView {...props}>
       <View style={{ paddingHorizontal: 16, paddingVertical: 20 }}>
         <View style={{}}>
-          <ProfileAvatar radius={80} initals="AO" />
+          <ProfileAvatar initals="AO" radius={100} src={require("../../assets/IMG-20251219-WA0042.jpg")} />
           <StyledText style={{ ...typography.lg }}>Ayobami Oludemi</StyledText>
         </View>
         <DrawerItemList {...props} />

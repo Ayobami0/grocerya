@@ -32,7 +32,7 @@ export function MainTabs() {
       tabBar={(props) => <NavBar {...props} />}
       screenOptions={{ headerShown: false }}
     >
-      <Tab.Screen name={ScreenList.home} component={MainDrawer} />
+      <Tab.Screen name={ScreenList.home} component={HomeScreen} />
       <Tab.Screen name={ScreenList.cart} component={CartScreen} />
       <Tab.Screen name={ScreenList.favorite} component={FavoriteScreen} />
       <Tab.Screen name={ScreenList.profile} component={ProfileScreen} />
@@ -55,7 +55,7 @@ export function MainDrawer() {
   >
     <Drawer.Screen
       name={ScreenList.home}
-      component={HomeScreen}
+      component={MainTabs}
       options={{ drawerIcon: (props) => <AppDrawerItemIcon name={ScreenList.home} {...props} /> }}
     />
     <Drawer.Screen name={ScreenList.cart} component={CartScreen}
@@ -79,7 +79,7 @@ export function Navigator() {
       <Stack.Screen name={ScreenList.setupGrocerySelection} component={SetupGroceryCategoriesScreen} />
       <Stack.Screen name={ScreenList.setupLocation} component={SetupLocationScreen} />
       <Stack.Screen name={ScreenList.setupNotification} component={SetupNotificationScreen} />
-      <Stack.Screen name={ScreenList.main} component={MainTabs} />
+      <Stack.Screen name={ScreenList.main} component={MainDrawer} />
     </Stack.Navigator>
   )
 }

@@ -10,7 +10,7 @@ export function HomeScreen() {
   return <View style={[styles.screen]}>
     <View style={{ paddingVertical: 10 }}>
       <TouchableOpacity onPress={() => navigation.openDrawer()}>
-        <ProfileAvatar initals="AO" radius={40} />
+        <ProfileAvatar initals="AO" radius={40} src={require("../../assets/IMG-20251219-WA0042.jpg")} />
       </TouchableOpacity>
     </View>
     <View style={[styles.screen]}>
