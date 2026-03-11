@@ -2,7 +2,9 @@ import { ReactNode } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import { ProfileAvatar, StyledText } from "@components";
-import { useNavigation } from "@react-navigation/native";
+import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
+import { ProfileRouteParams } from "@types";
+import { ScreenList } from "@navigation";
 
 export function HomeScreen() {
   const navigation = useNavigation<any>();
@@ -15,7 +17,7 @@ export function HomeScreen() {
     </View>
     <View style={[styles.screen]}>
       <View>
-        <StyledText style={{fontSize: 80}}>
+        <StyledText style={{ fontSize: 80 }}>
           HOME
         </StyledText>
       </View>
@@ -42,13 +44,21 @@ export function FavoriteScreen() {
 }
 
 export function ProfileScreen() {
-  return <AppShell>
-    <View>
-      <StyledText>
-        PROFILE
-      </StyledText>
-    </View>
-  </AppShell>
+  const route = useRoute<RouteProp<{ [ScreenList.profile]: ProfileRouteParams }, 'Profile'>>();
+
+  const fullname = route.params?.fullname ?? 'Ayobami Oludemi';
+  const email = route.params?.email ?? 'ayobamioludemi@grocerya.com';
+
+  return <View style={[
+    styles.screen,
+    { display: 'flex', justifyContent: 'center', alignItems: 'center' }]}>
+    <StyledText>
+      {fullname}
+    </StyledText>
+    <StyledText>
+      {email}
+    </StyledText>
+  </View>
 }
 
 
