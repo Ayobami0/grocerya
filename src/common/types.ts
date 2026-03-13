@@ -16,3 +16,9 @@ export interface Country {
   isoCode: string;
   dialCode: string;
 }
+
+// PROPS 
+export type ProfileRouteParams = {
+  fullname?: string;
+  email?: string;
+};
